@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %title mustachify.me
+    = haml :ga
+    :css
+      img {
+        border: none;
+        margin-bottom: 15px;
+      }
+      .url-entry,
+      .url-entry input {
+        font-size: 25px;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      .url-input {
+        width: 8em;
+      }
+      #footer {
+        margin-top: 250px;
+        text-align: center;
+      }
+      #footer,
+      #footer a {
+        color: grey;
+      }
+  %body
+    %a{:href => "http://github.com/afeld/mustachio"}
+      %img{:style => "position: absolute; top: 0; right: 0; border: 0;", :src => "https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png", :alt => "Fork me on GitHub"}
+    %img{:src => "/#{@stache_num}?src=#{DEMO_IMAGE}"}
+    %form.url-entry{ action: '', method: 'get' }
+      #{@site}/#{@stache_num}?src=<input class="url-input" type="text" name="src" placeholder="IMAGE_URL"/>
+      %input{ type: 'submit', value: 'Go' }
+    #footer
+      Created by
+      %a{:href => "http://afeld.me"}<
+        Aidan Feldman
+      \- thanks to
+      %a{:href => "https://github.com/benburkert"}<
+        Ben Burkert
+      and
+      %a{:href => "http://www.heroku.com"}<
+        Heroku
+      for hosting.

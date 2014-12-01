@@ -3,12 +3,9 @@ require 'sinatra/base'
 
 module Mustachio
   class App < Sinatra::Base
-    register Sinatra::Synchrony unless RUBY_VERSION.start_with? '1.8'
-    
     DEMO_IMAGE = 'http://www.librarising.com/astrology/celebs/images2/QR/queenelizabethii.jpg'
     
     set :static, true
-    set :public, 'public'
     
     configure :production do
       require 'newrelic_rpm' if ENV['NEW_RELIC_ID']
