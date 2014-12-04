@@ -15,6 +15,8 @@ gem 'haml'
 
 gem 'fastimage', :require => 'fastimage'
 
+gem 'mimemagic', :require => 'mimemagic'
+
 group :development do
   gem 'jeweler'
 end

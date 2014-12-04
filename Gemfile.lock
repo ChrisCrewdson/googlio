@@ -72,6 +72,7 @@ GEM
       rdoc
     json (1.8.1)
     jwt (1.0.0)
+    mimemagic (0.2.1)
     mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -79,6 +80,8 @@ GEM
     multipart-post (2.0.0)
     newrelic_rpm (3.9.1.236)
     nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
+    nokogiri (1.6.3.1-x64-mingw32)
       mini_portile (= 0.6.0)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -122,6 +125,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   addressable
@@ -134,6 +138,7 @@ DEPENDENCIES
   haml
   jeweler
   magickly!
+  mimemagic
   newrelic_rpm
   rack-test
   rspec

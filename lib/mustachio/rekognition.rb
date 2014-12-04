@@ -13,7 +13,7 @@ module Mustachio
       end
 
       def json file, jobs = 'face'
-        conn = Faraday.new :url => 'http://rekognition.com' do |faraday|
+        conn = Faraday.new :url => 'https://rekognition.com' do |faraday|
           faraday.request :multipart
           faraday.request :url_encoded
           faraday.adapter :excon
@@ -38,12 +38,14 @@ module Mustachio
       end
 
       def content_type file
-        `file -b --mime #{file.path}`.strip.split(/[:;]\s+/)[0]
+        MimeMagic.by_magic(File.open(file))
       end
 
       def face_detection file
         json = self.json file, 'face_part'
-        width, height = self.dims file
+
+        width = json['ori_img_size']['width'].to_f
+        height = json['ori_img_size']['height'].to_f
 
         json['face_detection'].map do |entry|
           mouth_left, mouth_right, nose = entry.values_at('mouth_l', 'mouth_r', 'nose').map do |dims|
