@@ -6,7 +6,7 @@ require File.join(File.dirname(__FILE__), 'mustachio', 'shortcuts')
 
 module Mustachio
 #  FACE_POS_ATTRS = ['center', 'eye_left', 'eye_right', 'mouth_left', 'mouth_center', 'mouth_right', 'nose']
-  REQUIRED_FACE_ATTRS = %w(mouth_left mouth_right nose)
+  REQUIRED_FACE_ATTRS = %w(eye_left eye_right nose)
   FACE_SPAN_SCALE = 2.0
   
   class << self
@@ -14,20 +14,24 @@ module Mustachio
     def mustaches
       @@mustaches
     end
+
+    def eyes
+      @@eyes
+    end
     
     def setup
-      staches = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'staches.yml')))
-      staches.map! do |stache|
-        stache['vert_offset'] ||= 0
-        stache['mouth_overlap'] ||= 0
+      eyes = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'eyes.yml')))
+      eyes.map! do |eye|
+        eye['vert_offset'] ||= 0
+        eye['eye_overlap'] ||= 0
         
-        stache['file_path'] = File.expand_path(File.join(File.dirname(__FILE__), 'mustachio', 'public', 'images', 'staches', stache['filename']))
-        unless stache['width'] && stache['height']
-          stache['width'], stache['height'] = FastImage.size(File.new(stache['file_path']))
+        eye['file_path'] = File.expand_path(File.join(File.dirname(__FILE__), 'mustachio', 'public', 'images', 'eyes', eye['filename']))
+        unless eye['width'] && eye['height']
+          eye['width'], eye['height'] = FastImage.size(File.new(eye['file_path']))
         end
-        stache
+        eye
       end
-      @@mustaches = staches
+      @@eyes = eyes
     end
 
     # block should take |File|

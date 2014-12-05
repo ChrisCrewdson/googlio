@@ -48,14 +48,14 @@ module Mustachio
         height = json['ori_img_size']['height'].to_f
 
         json['face_detection'].map do |entry|
-          mouth_left, mouth_right, nose = entry.values_at('mouth_l', 'mouth_r', 'nose').map do |dims|
+          eye_left, eye_right, nose = entry.values_at('eye_left', 'eye_right', 'nose').map do |dims|
             {
               'x' => ((dims['x'].to_f / width) * 100.0),
               'y' => ((dims['y'].to_f / height) * 100.0)
             }
           end
 
-          { 'mouth_left' => mouth_left, 'mouth_right' => mouth_right, 'nose' => nose }
+          { 'eye_left' => eye_left, 'eye_right' => eye_right, 'nose' => nose }
         end
       end
     end

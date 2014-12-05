@@ -140,6 +140,7 @@ DEPENDENCIES
   magickly!
   mimemagic
   newrelic_rpm
+  rack
   rack-test
   rspec
   sinatra (~> 1.2)
