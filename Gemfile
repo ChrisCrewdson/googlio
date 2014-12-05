@@ -17,6 +17,8 @@ gem 'fastimage', :require => 'fastimage'
 
 gem 'mimemagic', :require => 'mimemagic'
 
+gem 'rack'
+
 group :development do
   gem 'jeweler'
 end
