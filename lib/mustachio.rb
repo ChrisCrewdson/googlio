@@ -11,9 +11,9 @@ module Mustachio
   
   class << self
 
-    def mustaches
-      @@mustaches
-    end
+    # def mustaches
+    #   @@mustaches
+    # end
 
     def eyes
       @@eyes

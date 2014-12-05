@@ -1,6 +1,14 @@
 # files located under lib/mustachio/public/images/eyes/
 
 -
+  filename: eyes_01.png
+  vert_offset: 1
+  eye_overlap: 0
+-
   filename: eyes_02.png
-  vert_offset: 15
-  eye_overlap: 120
+  vert_offset: 1
+  eye_overlap: 0
+-
+  filename: eyes_03.png
+  vert_offset: 1
+  eye_overlap: 0

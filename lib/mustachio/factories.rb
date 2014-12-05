@@ -1,5 +1,5 @@
 Magickly.add_convert_factory :mustachify do |c|
-  c.convert_args do |stache_num_param, convert|
+  c.convert_args do |eye_num_param, convert|
     identity = convert.pre_identify
     width = identity[:width]
     height = identity[:height]
@@ -9,7 +9,7 @@ Magickly.add_convert_factory :mustachify do |c|
 
     commands = ['-alpha Background -background Transparent']
     faces.each do |face|
-      stache_num = case stache_num_param
+      eye_num = case eye_num_param
                    when true
                      0
                    when 'true'
@@ -17,10 +17,10 @@ Magickly.add_convert_factory :mustachify do |c|
                    when 'rand'
                      rand(Mustachio.eyes.size)
                    else
-                     stache_num_param.to_i
+                     eye_num_param.to_i
                    end
 
-      eye = Mustachio.eyes[stache_num]
+      eye = Mustachio.eyes[eye_num]
 
       face['eye_center'] ||= {
         'x' => ((face['eye_left']['x'] + face['eye_right']['x']) / 2.0),
