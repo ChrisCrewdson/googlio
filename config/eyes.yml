@@ -2,13 +2,13 @@
 
 -
   filename: eyes_01.png
-  vert_offset: 1
-  eye_overlap: 0
+  vert_offset: 30
+  eye_overlap: 150
 -
   filename: eyes_02.png
-  vert_offset: 1
-  eye_overlap: 0
+  vert_offset: 30
+  eye_overlap: 65
 -
   filename: eyes_03.png
-  vert_offset: 1
-  eye_overlap: 0
+  vert_offset: 30
+  eye_overlap: 30
