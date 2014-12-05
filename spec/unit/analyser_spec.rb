@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe "analysers", :vcr => true do
   describe "#face_data" do
-    it "should give similar results for small and large photos" do
+    it "#should give similar results for small and large photos" do
       big_obama = get_photo('big_obama.jpeg')
       small_obama = get_photo('small_obama.jpeg')
       
