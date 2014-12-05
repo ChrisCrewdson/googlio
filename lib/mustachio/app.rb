@@ -3,7 +3,7 @@ require 'sinatra/base'
 
 module Mustachio
   class App < Sinatra::Base
-    DEMO_IMAGE = 'http://www.librarising.com/astrology/celebs/images2/QR/queenelizabethii.jpg'
+    DEMO_IMAGE = 'http://media.salon.com/2013/08/bin-laden-raid-620x412.jpg'
     
     set :static, true
     
