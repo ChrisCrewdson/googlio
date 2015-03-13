@@ -2,4 +2,4 @@
 
 ![The Queen](queenelizabethii.png)
 
-http://googlio.elasticbeanstalk.com/?src=YOUR-IMAGE-URL
+http://googlio.herokuapp.com/?src=YOUR-IMAGE-URL
